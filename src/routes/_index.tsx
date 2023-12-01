@@ -1,3 +1,4 @@
+import {Cloudinary} from "@cloudinary/url-gen"
 import type {MetaFunction} from "@remix-run/node"
 
 const meta: MetaFunction = () => [
@@ -7,11 +8,35 @@ const meta: MetaFunction = () => [
 ]
 
 const IndexRoute = () => {
+    const cld = new Cloudinary({
+        cloud: {
+            cloudName: "bradgarropy",
+        },
+    })
+
+    const djImageUrl = cld
+        .image("cloudinary-demo/dj")
+        .format("auto")
+        .quality("auto")
+        .toURL()
+
     return (
         <>
             <h2 className="text-2xl font-bold mb-8">Home</h2>
 
-            <img className="mb-2" src="dj.jpg" alt="dj" />
+            <img
+                className="mb-2"
+                src="https://images.unsplash.com/photo-1619597361832-a568b1e0555f"
+                alt="dj"
+            />
+
+            <img
+                className="mb-2"
+                src="https://res.cloudinary.com/bradgarropy/image/upload/v1701465980/cloudinary-demo/dj.jpg"
+                alt="dj"
+            />
+
+            <img className="mb-2" src={djImageUrl} alt="dj" />
 
             <p className="text-center">
                 Photo by{" "}
