@@ -1,5 +1,6 @@
 import {Cloudinary} from "@cloudinary/url-gen"
-import type {MetaFunction} from "@remix-run/node"
+import {json, type MetaFunction} from "@remix-run/node"
+import {useLoaderData} from "@remix-run/react"
 
 const meta: MetaFunction = () => [
     {
@@ -7,7 +8,7 @@ const meta: MetaFunction = () => [
     },
 ]
 
-const IndexRoute = () => {
+export const loader = () => {
     const cld = new Cloudinary({
         cloud: {
             cloudName: "bradgarropy",
@@ -19,6 +20,12 @@ const IndexRoute = () => {
         .format("auto")
         .quality("auto")
         .toURL()
+
+    return json({djImageUrl})
+}
+
+const IndexRoute = () => {
+    const {djImageUrl} = useLoaderData<typeof loader>()
 
     return (
         <>
