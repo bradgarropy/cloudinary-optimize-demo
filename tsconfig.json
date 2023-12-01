@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "moduleResolution": "Bundler",
+        "noEmit": true,
+        "paths": {
+            "~/*": ["./src/*"]
+        },
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "ESNext",
+        "types": ["vitest/globals"]
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.tsx",
+        "plopfile.js",
+        "remix.config.js",
+        "remix.env.d.ts",
+        "server.js",
+        "tailwind.config.js"
+    ]
+}
