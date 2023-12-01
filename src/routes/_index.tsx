@@ -31,18 +31,21 @@ const IndexRoute = () => {
         <>
             <h2 className="text-2xl font-bold mb-8">Home</h2>
 
-            <img
+            {/* STEP 1 | Image comes straight from Unsplash. */}
+            {/* <img
                 className="mb-2"
                 src="https://images.unsplash.com/photo-1619597361832-a568b1e0555f"
                 alt="dj"
-            />
+            /> */}
 
-            <img
+            {/* STEP 2 | Image comes from Cloudinary. */}
+            {/* <img
                 className="mb-2"
                 src="https://res.cloudinary.com/bradgarropy/image/upload/v1701465980/cloudinary-demo/dj.jpg"
                 alt="dj"
-            />
+            /> */}
 
+            {/* STEP 3 | Image comes from Cloudinary with optimizations. */}
             <img className="mb-2" src={djImageUrl} alt="dj" />
 
             <p className="text-center">
