@@ -9,11 +9,11 @@ const meta: MetaFunction = () => [
 const IndexRoute = () => {
     return (
         <>
-            <h2 className="text-2xl font-bold">Home</h2>
+            <h2 className="text-2xl font-bold mb-8">Home</h2>
 
-            <img src="dj.jpg" alt="dj" />
+            <img className="mb-2" src="dj.jpg" alt="dj" />
 
-            <p>
+            <p className="text-center">
                 Photo by{" "}
                 <a href="https://unsplash.com/@deni_eliash?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
                     Daniel Eliashevskyi
