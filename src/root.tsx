@@ -41,7 +41,7 @@ const App = () => {
                 <div className="grid min-h-screen grid-rows-layout">
                     <Header />
 
-                    <div className="p-8">
+                    <div className="p-8 grid place-content-center">
                         <Outlet />
                     </div>
 

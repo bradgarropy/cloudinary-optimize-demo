@@ -1,5 +1,7 @@
 import {Cloudinary} from "@cloudinary/url-gen"
-import {json, type MetaFunction} from "@remix-run/node"
+import {scale} from "@cloudinary/url-gen/actions/resize"
+import type {MetaFunction} from "@remix-run/node"
+import {json} from "@remix-run/node"
 import {useLoaderData} from "@remix-run/react"
 
 const meta: MetaFunction = () => [
@@ -19,6 +21,7 @@ export const loader = () => {
         .image("cloudinary-demo/dj")
         .format("auto")
         .quality("auto")
+        .resize(scale().width(1280))
         .toURL()
 
     return json({djImageUrl})
@@ -33,20 +36,20 @@ const IndexRoute = () => {
 
             {/* STEP 1 | Image comes straight from Unsplash. */}
             {/* <img
-                className="mb-2"
+                className="mb-2 max-w-7xl"
                 src="https://images.unsplash.com/photo-1619597361832-a568b1e0555f"
                 alt="dj"
             /> */}
 
             {/* STEP 2 | Image comes from Cloudinary. */}
             {/* <img
-                className="mb-2"
+                className="mb-2 max-w-7xl"
                 src="https://res.cloudinary.com/bradgarropy/image/upload/v1701465980/cloudinary-demo/dj.jpg"
                 alt="dj"
             /> */}
 
             {/* STEP 3 | Image comes from Cloudinary with optimizations. */}
-            <img className="mb-2" src={djImageUrl} alt="dj" />
+            <img className="mb-2 max-w-7xl" src={djImageUrl} alt="dj" />
 
             <p className="text-center">
                 Photo by{" "}
