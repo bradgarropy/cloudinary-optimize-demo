@@ -15,6 +15,9 @@ export const loader = () => {
         cloud: {
             cloudName: "bradgarropy",
         },
+        url: {
+            analytics: false,
+        },
     })
 
     const djImageUrl = cld
